@@ -14,7 +14,10 @@
 */
 
 // Code here
-
+function CarFactory(make, model) {
+  this.make = make
+  this.model = model
+}
 
 
 ////////// PROBLEM 2 //////////
@@ -33,7 +36,7 @@ function Employee(name, email, hireDate, salary) {
 */
 
 // Code here
-
+var bob = new Employee('Bob', 'bob@gmail.com', '01-02-98')
 
 
 ////////// PROBLEM 3 //////////
@@ -54,6 +57,16 @@ mustang.moveCar(); // Increments mustang' move property by 10. Returns the new m
 */
 
 // Code here
+function Car(make, model, year, move) {
+  this.make = make;
+  this.model = model;
+  this.year = year;
+  this.move = 0
+  this.moveCar = function() {
+    this.move += 10
+    return this.move
+  }
+}
 
 
 ////////// PROBLEM 4 ////////// 	
@@ -70,7 +83,10 @@ mustang.moveCar(); // Increments mustang' move property by 10. Returns the new m
 
 
  // Code here	
-
+Movie.prototype.changeRating = function(param) {
+  (this.rating + param)/2
+  this.rating.push()
+}
 
 
 
@@ -83,7 +99,21 @@ mustang.moveCar(); // Increments mustang' move property by 10. Returns the new m
 
 
  // Code here	
+ function User(name, age, email, savedPosts) {
+  this.name = name
+  this.age = age
+  this.email = email
+  this.savedPosts = savedPosts
+}
 
+User.prototype.addSavedPost = function(id, title, rating) {
+  let newPost = {
+    id: id,
+    title: title,
+    rating: rating
+  }
+  this.savedPosts.push(newPost)
+}
 
 
 
